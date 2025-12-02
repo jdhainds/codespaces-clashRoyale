@@ -7,8 +7,10 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
+
+  <div id="mc1">
     <h1>Clash Royale Quiz</h1>
-    <p>Which of these troops should not exist</p>
+    <h2 id="question-text">Which of these troops should Supercell delete?</h2>
      <input type="radio" id="megaknight" name="troop" value="megaknight">
   <label for="megaknight">Megaknight</label><br>
   <input type="radio" id="pekka" name="troop" value="pekka">
@@ -17,9 +19,10 @@
   <label for="dartGoblin">Dart Goblin</label><br>
   <input type="radio" id="prince" name="troop" value="prince">
   <label for="prince">Prince</label>
+  </div>
 
-  
-    <p>Which of these spells is used the most in the game?</p>
+  <div id="mc2">
+    <h2 id="question-text">What is the most used spell in Clash Royale?</h2>
      <input type="radio" id="fireball" name="spell" value="fireball">
   <label for="fireball">Fireball</label><br>
   <input type="radio" id="log" name="spell" value="log">
@@ -28,11 +31,28 @@
   <label for="zap">Zap</label><br>
   <input type="radio" id="arrow" name="spell" value="arrow">
   <label for="arrow">Arrow</label>
+  </div>
 
+<div id="true">
+  <h2 id="question-text">Kennedy sucks at Clash Royale</h2>
+  <button id="true-button">True</button>
+  <button id="false-button">False</button>
+  <div id="feedback"></div>
+</div>
 
+<div id="false">
+  <h2 id="question-text">You need 9000 trophies to get ranked?</h2>
+  <button id="true-button">True</button>
+  <button id="false-button">False</button>
+  <div id="feedback"></div>
+</div>
 
-
-
+<div id="string">
+<label for="userName">What is your name?</label>
+    <input type="text" id="userName" name="userName">
+    <button onclick="greetUser()">Submit</button>
+    <p id="greetingMessage"></p>
+</div>
 
 
 
