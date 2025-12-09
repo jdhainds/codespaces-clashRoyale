@@ -1,0 +1,169 @@
+/* --- Basic Reset and Font Setup --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'You Blockhead';
+    src: url('You\ Blockhead.ttf');
+}
+
+body {
+    font-family: 'You Blockhead';
+    background-color: #1a237e; /* Much Darker Blue (Deep Indigo) */
+    color: #ecf0f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* --- Main Quiz Container --- */
+.quiz-container {
+    background-color: #2c387e; /* Slightly lighter than body, dark panel look */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); /* Stronger shadow */
+    width: 100%;
+    max-width: 600px;
+    border: 3px solid #ffd700; /* Bright Gold Border */
+}
+
+/* --- Header/Title Styling (Fixed at the top of the container) --- */
+h1 {
+    text-align: center;
+    color: #ffc107; /* Brighter Gold color for the title */
+    margin-bottom: 30px; /* Increased space below the title */
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+    font-size: 2.8em; /* Slightly larger title */
+    border-bottom: 2px solid #ffeb3b; /* A subtle separation line */
+    padding-bottom: 15px;
+}
+
+/* --- Question Area with Border Effects --- */
+.question {
+    font-size: 1.4em;
+    margin-bottom: 25px;
+    padding: 20px;
+    background-color: #3f51b5; /* A vibrant blue for the question block */
+    border-radius: 10px;
+    text-align: center;
+    
+    /* NEW: Border Effects */
+    border: 4px solid #ff9800; /* Orange/Gold border */
+    box-shadow: 0 0 15px rgba(255, 152, 0, 0.7); /* Glow effect */
+    position: relative;
+    overflow: hidden;
+}
+
+/* You can add a subtle diagonal stripe pattern for extra effect */
+.question::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+        -45deg,
+        rgba(255, 255, 255, 0.05),
+        rgba(255, 255, 255, 0.05) 5px,
+        transparent 5px,
+        transparent 10px
+    );
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+#submitBtn {
+	background-color:#ffbf00;
+	border-radius:28px;
+	border:1px solid #f7ff00;
+	display:inline-block;
+	cursor:pointer;
+	color:#0000ff;
+	font-family:Arial;
+	font-size:17px;
+	padding:16px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+#submitBtn:hover {
+	background-color:#0a95ff;
+}
+
+
+
+/* --- Answer Buttons Container --- */
+.answer-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+/* --- Individual Answer Button Styling (Kept similar for the 3D effect) --- */
+.btn {
+    background-color: #e53935; /* Brighter Red */
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    outline: none;
+    box-shadow: 0 4px 0 0 #c62828; /* Darker red for 3D effect */
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.btn:hover:not(:disabled) {
+    background-color: #c62828;
+}
+
+.btn:active:not(:disabled) {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 0 #c62828;
+}
+
+.btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+
+/* --- Score/Result Display --- */
+.result-text {
+    text-align: center;
+    font-size: 1.6em;
+    margin-top: 30px;
+    color: #ffc107;
+}
+
+
+
+    
+
+/* Hover State */
+#submit-btn:hover {
+    background-color: #ff9800; /* Darker gold/orange on hover */
+}
+
+/* --- Mobile Responsiveness (For smaller screens) --- */
+@media (max-width: 480px) {
+    .answer-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .quiz-container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2.2em;
+        margin-bottom: 20px;
+    }
+}
